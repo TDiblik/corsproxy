@@ -25,6 +25,10 @@ docker run \
   -e CORS_TARGET_PORT=8080 \
   -v "$(pwd)/default.conf.template:/etc/nginx/templates/default.conf.template:ro" \
   --add-host host.docker.internal:host-gateway \
-  nginx:alpine \
+  nginx:1.27-alpine \
   nginx-debug -g "daemon off;"
 ```
+
+### Notes
+
+- Right now the proxy is pinned to `nginx:1.27-alpine` because it works as expected. If you'd like to experiment, feel free to bump it up. I occasionally bump the version and fix potentional issues.
